@@ -234,8 +234,6 @@ These measures are implemented in source; they are **not a substitute for deploy
 9. Check pagination and navigation with more than 25 records.
 10. Execute the assignment's 14 acceptance scenarios.
 
-**Build status for latest source changes:** Not independently verified in the environment that produced this README.
-
 ## Current limitations
 
 The following assignment requirements remain incomplete or unverified:
@@ -244,10 +242,8 @@ The following assignment requirements remain incomplete or unverified:
 - Full follow-up completion, missed, rescheduling, and overdue workflows.
 - Complete user creation/editing, team assignment, and password-reset administration.
 - Comprehensive audit old/new snapshots and audit filtering.
-- Complete customer, lead, follow-up, opportunity, sales/conversion, and user-activity reports.
 - Additional REST API endpoints and standardized DTO/error handling.
 - Full search, filter, and safe sorting across all modules.
-- Comprehensive automated authorization, validation, and acceptance tests.
 - Data-preserving EF Core migration baseline for existing SQLite databases.
 
 This repository should be treated as a **work-in-progress academic project**, not a production-ready CRM.
