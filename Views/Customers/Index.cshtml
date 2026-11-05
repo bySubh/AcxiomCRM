@@ -1,0 +1,7 @@
+@model IEnumerable<AcxiomCRM.Models.Customer>
+<h2>Customers</h2><p><a class="btn btn-primary" asp-action="Create">Create Customer</a></p><form method="get" class="d-flex mb-3"><input name="search" value="@ViewBag.Search" placeholder="Search" class="form-control"/><button class="btn btn-outline-primary">Search</button></form><div class="table-responsive"><table class="table table-striped"><thead><tr><th>ID</th><th>Name</th><th>Actions</th></tr></thead><tbody>@foreach(var x in Model){<tr><td>@x.Id</td><td>@x.Name</td><td><a asp-action="Edit" asp-route-id="@x.Id">Edit</a> <form method="post" asp-action="Delete" asp-route-id="@x.Id" class="d-inline" onsubmit="return confirm('Delete this record?')"><button class="btn btn-sm btn-outline-danger">Delete</button></form></td></tr>}</tbody></table></div>
+<nav aria-label="Pages" class="d-flex gap-2 my-3">
+@if ((int)(ViewBag.Page ?? 1) > 1) { <a class="btn btn-outline-secondary" asp-action="Index" asp-route-page="@((int)ViewBag.Page-1)" asp-route-search="@ViewBag.Search">Previous</a> }
+<span class="align-self-center">Page @ViewBag.Page of @ViewBag.TotalPages</span>
+@if ((int)(ViewBag.Page ?? 1) < (int)(ViewBag.TotalPages ?? 0)) { <a class="btn btn-outline-secondary" asp-action="Index" asp-route-page="@((int)ViewBag.Page+1)" asp-route-search="@ViewBag.Search">Next</a> }
+</nav>

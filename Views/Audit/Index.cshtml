@@ -1,0 +1,2 @@
+@model IEnumerable<AcxiomCRM.Models.AuditLog>
+<h2>Audit log</h2><table class="table table-sm"><tr><th>Time UTC</th><th>User</th><th>Action</th><th>Entity</th><th>ID</th></tr>@foreach(var x in Model){<tr><td>@x.CreatedAt</td><td>@x.UserId</td><td>@x.Action</td><td>@x.EntityName</td><td>@x.RecordId</td></tr>}</table>
